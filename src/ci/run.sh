@@ -25,9 +25,7 @@ source "$ci_dir/shared.sh"
 
 branch_name=$(getCIBranch)
 
-if [ ! isCI ] || [ "$branch_name" = "auto" ]; then
-    RUST_CONFIGURE_ARGS="$RUST_CONFIGURE_ARGS --set build.print-step-timings --enable-verbose-tests"
-fi
+RUST_CONFIGURE_ARGS="$RUST_CONFIGURE_ARGS --set build.print-step-timings --enable-verbose-tests"
 
 RUST_CONFIGURE_ARGS="$RUST_CONFIGURE_ARGS --enable-sccache"
 RUST_CONFIGURE_ARGS="$RUST_CONFIGURE_ARGS --disable-manage-submodules"
